@@ -1,8 +1,9 @@
 import React, { useRef, useEffect, useState } from "react";
-import Operniy from "../assets/Operniy.mp4";
+import Operniy from "../../assets/Operniy.mp4";
 import { useNavigate } from 'react-router-dom';
+import './VideoPlayer.css'
 
-const Main = () => {
+const VideoPlayer = () => {
   const videoRef = useRef(null);
   const [showContent, setShowContent] = useState(false); // стан для показу тексту
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ const Main = () => {
   };
 
   const handleClick = () => {
-    navigate('/photoSlider');  
+    navigate('/prologue');  
   };
 
   return (
@@ -33,10 +34,10 @@ const Main = () => {
                     <h1>Одного разу у Львiвськiй Оперi</h1>
                 </div>
                 <div className={showContent ? "visible-text-second-part" : "hidden-text-second-part"}>
-                    <p>Загублена фотографiя</p>
+                    <p>Історія про загублену фотографiю</p>
                 </div>
                 <div className={showContent ? "visible-button" : "hidden-button"}>
-                    <div className="box-1">
+                    <div className="box-1" onClick={handleClick}>
                         <div className="btn btn-one">
                             <span>Почати</span>
                         </div>
@@ -47,4 +48,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default VideoPlayer;
