@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import OperaHall from "../../assets/Photo/OperaHall.jpg";
 import "./Prologue.css";
 
@@ -22,13 +23,14 @@ const Prologue = () => {
     "З'явився набір, досі не баченої оперним театром краси, фото.",
   ];
 
-  const iSpeed = 100; // Time delay of print out
+  const iSpeed = 10; // Time delay of print out
   const [iIndex, setIIndex] = useState(0); // Start printing array at this position
   const [iTextPos, setITextPos] = useState(0); // Initialise text position
   const [sContents, setSContents] = useState(""); // Initialise contents variable
   const [displayedText, setDisplayedText] = useState(""); // The text being displayed
   const [showButton, setShowButton] = useState(false);
 
+  const navigate = useNavigate();
   useEffect(() => {
     const typewriter = () => {
       if (iIndex < aText.length) {
@@ -62,6 +64,10 @@ const Prologue = () => {
     }
   }, [iTextPos, iIndex, aText, sContents, iSpeed]);
 
+  const handleClick = () => {
+    navigate("/firstPhoto");
+  };
+
   return (
     <div className="main">
       <img src={OperaHall} alt="Opera Hall" />
@@ -75,7 +81,7 @@ const Prologue = () => {
       <div>
         <div className={showButton ? "visible-button" : "hidden-button"}>
           <div className="button-container">
-            <div className="btn btn-one">
+            <div className="btn btn-one" onClick={handleClick}>
               <span>Доторкнутись до прекрасного</span>
             </div>
           </div>
