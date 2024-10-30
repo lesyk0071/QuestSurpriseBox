@@ -59,13 +59,6 @@ const Epilog = () => {
     }
   }, [iTextPos, iIndex, aText, sContents, iSpeed]);
 
-  useEffect(() => {
-    // Play the video once text is finished
-    if (showButton && videoRef.current) {
-      videoRef.current.play();
-    }
-  }, [showButton]);
-
   const handleClick = () => {
     navigate("/firstPhoto");
   };
