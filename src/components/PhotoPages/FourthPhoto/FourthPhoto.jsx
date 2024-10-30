@@ -8,7 +8,7 @@ const FourthPhoto = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("/fourthPhoto");
+    navigate("/epilog");
   };
 
   return (
@@ -18,7 +18,7 @@ const FourthPhoto = () => {
       <img src={EmptyImage} alt="fourth photo" className="overlay-img" />
       <div>
         <div className="button-container">
-          <div className="btn btn-one">
+          <div className="btn btn-one" onClick={handleClick}>
             <span>Наступна</span>
           </div>
         </div>
