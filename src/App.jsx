@@ -6,6 +6,7 @@ import SecondPhoto from "./components/PhotoPages/SecondPhoto/SecondPhoto";
 import ThirdPhoto from "./components/PhotoPages/ThirdPhoto/ThirdPhoto";
 import FourthPhoto from "./components/PhotoPages/FourthPhoto/FourthPhoto";
 import Epilog from "./components/Epilog/Epilog";
+import Final from "./components/Final/Final";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path="/thirdPhoto" element={<ThirdPhoto />} />
           <Route path="/fourthPhoto" element={<FourthPhoto />} />
           <Route path="/epilog" element={<Epilog />} />
+          <Route path="/final" element={<Final />} />
         </Routes>
       </div>
     </Router>

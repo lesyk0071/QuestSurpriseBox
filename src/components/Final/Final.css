@@ -1,0 +1,194 @@
+img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%; /* Відео займає всю ширину */
+  height: 100%; /* Відео займає всю висоту */
+  object-fit: none; /* Відео буде обрізатися так, щоб заповнити контейнер */
+  transform: translate(-50%, -50%); /* Центрування відео по обом осям */
+}
+
+.epilog-content {
+  font-family: "Art-Victorian", serif;
+  font-size: 20px;
+  text-align: center;
+  margin: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  color: hsl(51, 61%, 69%);
+  padding-top: 20px;
+  gap: 0em;
+}
+
+.start-video-button {
+  margin-bottom: -40px; /* Decrease the spacing below the button */
+}
+
+.epilog-video {
+  width: 300px;
+  height: 50px; /* Adjust spacing if needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  margin-top: 0px;
+}
+
+.epilog-video video {
+  width: 100%; /* Ensures the video scales with container */
+  height: auto;
+  border-radius: 10px; /* Optional */
+  display: block; /* Ensure video is not hidden */
+}
+
+.typewriter h1 {
+  color: #fff;
+  font-family: "Art-Victorian", serif;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid hsl(51, 61%, 69%); /* The typewriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Centers the text */
+  letter-spacing: 0.15em; /* Adjust as needed */
+  width: fit-content; /* Ensures the element takes up only as much space as its content */
+  animation: typing 3.5s steps(30, end), blink-caret 0.5s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: hsl(51, 61%, 69%);
+  }
+}
+
+.epilog-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.button-container {
+  position: absolute; /* Position relative to the container */
+  width: 100%; /* Full width of the container */
+  height: 100%; /* Full height of the container */
+  display: flex;
+  justify-content: center; /* Horizontally center the button */
+  align-items: flex-end; /* Align the button at the bottom */
+  bottom: 0;
+}
+
+.btn {
+  line-height: 50px;
+  height: 50px;
+  text-align: center;
+  width: 250px;
+  cursor: pointer;
+  position: relative; /* Position relative within the flex container */
+  bottom: 5em; /* Provide space from the bottom of the container */
+  text-wrap: nowrap;
+}
+
+.btn-one {
+  color: hsl(51, 62%, 60%);
+  transition: all 0.3s;
+  position: relative;
+}
+
+.btn-one span {
+  transition: all 0.3s;
+}
+
+.btn-one::before {
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  outline: none;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-top-color: rgba(255, 255, 255, 0.5);
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+  transform: scale(0.1, 1);
+}
+
+.btn-one:hover span {
+  letter-spacing: 2px;
+}
+
+.btn-one:hover::before {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+
+.btn-one:focus {
+  outline: none;
+}
+
+.btn-one:active {
+  outline: none;
+}
+
+.btn-one::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.3s;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-top-color: rgba(255, 255, 255, 0.5);
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-one:hover::after {
+  opacity: 0;
+  transform: scale(0.1, 1);
+}
+
+.hidden-button {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  transition-delay: 1s; /* Встановлюємо затримку для кнопки */
+}
+
+.visible-button {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+  transition-delay: 1s; /* Встановлюємо таку ж затримку для появи кнопки */
+}

@@ -1,19 +1,25 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import OperaHall from "../../assets/Photo/OperaHall.jpg";
-import Voice from "../../assets/Voice.mp4";
-import "./Epilog.css";
+import "./Final.css";
 
-const Epilog = () => {
+const Final = () => {
   const aText = [
-    "Як бачимо, четверте фото дивним чином відсутнє в місці, де ми його чекали.,",
-    "Але як так сталося, що те, що мало прикрашати стіни національної опери, просто зникло?,",
-    "Та це, насправді, і не так важливо, головне завдання зараз - його знайти.",
+    "Здавалося б, після таких слів можна би було відмовитись від ідеї пошуку цієї фотографії.",
+    "Але це тільки здавалося.,",
+    "Після дового розслідування виявилось, що дане фото було викрадене невідомим чоловіком",
     " ",
-    "Чи розчарувалась героїня фотографії, побачивши відсутність картини?",
-    "Не можна дати правильної відповіді, але враховуючи",
-    "присутність інших трьох, реакція би була подібна наступній:",
+    "З оповідей людей, які бачили його з тією самою фотографією в руках,",
+    "Кожен сказав, що воно було неймовірної краси.",
+    "Можливо саме тому, що всі звертали уваги на фото, а не на чоловіка, який його викрав,",
+    "Ніхто і не міг чітко пояснити, як цей чоловік виглядав",
     " ",
+    "Тому надіємось, що одного дня доля подарує нам шанс ще раз побачити фотографію,",
+    "яка мала прикрашати стіни Львівської національної опери.",
+    " ",
+    " ",
+    "P.S. Можеш відкривати)",
+    "І ні, я не заморочився, просто для тебе хочеться робити шось цікаве)",
   ];
 
   const iSpeed = 10; // Time delay of print out
@@ -21,8 +27,6 @@ const Epilog = () => {
   const [iTextPos, setITextPos] = useState(0); // Initialise text position
   const [sContents, setSContents] = useState(""); // Initialise contents variable
   const [displayedText, setDisplayedText] = useState(""); // The text being displayed
-  const [showButton, setShowButton] = useState(false);
-  const [showNextButton, setShowNextButton] = useState(false);
 
   const navigate = useNavigate();
   const videoRef = useRef(null);
@@ -63,15 +67,6 @@ const Epilog = () => {
     navigate("/final");
   };
 
-  const startVideo = () => {
-    if (showButton && videoRef.current) {
-      videoRef.current.play();
-    }
-  };
-
-  const videoEnd = () => {
-    setShowNextButton(true);
-  };
   return (
     <div className="main">
       <img src={OperaHall} alt="Opera Hall" />
@@ -81,36 +76,9 @@ const Epilog = () => {
           id="typedtext"
           dangerouslySetInnerHTML={{ __html: displayedText }}
         />
-        <div className={showButton ? "visible-button" : "hidden-button"}>
-          <div className="start-video-button">
-            <div className="btn btn-one" onClick={startVideo}>
-              <span>Послухати</span>
-            </div>
-          </div>
-        </div>
-        <div className={showButton ? "visible-button" : "hidden-button"}>
-          <div className="epilog-video">
-            <video
-              ref={videoRef}
-              src={Voice}
-              muted={false}
-              playsInline
-              onEnded={videoEnd}
-            />
-          </div>
-        </div>
-      </div>
-      <div>
-        <div className={showNextButton ? "visible-button" : "hidden-button"}>
-          <div className="button-container">
-            <div className="btn btn-one" onClick={handleClick}>
-              <span>Далі</span>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );
 };
 
-export default Epilog;
+export default Final;
