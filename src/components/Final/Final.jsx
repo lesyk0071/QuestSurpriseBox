@@ -28,8 +28,6 @@ const Final = () => {
   const [sContents, setSContents] = useState(""); // Initialise contents variable
   const [displayedText, setDisplayedText] = useState(""); // The text being displayed
 
-  const navigate = useNavigate();
-  const videoRef = useRef(null);
   useEffect(() => {
     const typewriter = () => {
       if (iIndex < aText.length) {
@@ -59,14 +57,8 @@ const Final = () => {
       const timeout = setTimeout(typewriter, iSpeed);
       return () => clearTimeout(timeout); // Clean up timeout to avoid memory leaks
     } else {
-      setShowButton(true);
     }
   }, [iTextPos, iIndex, aText, sContents, iSpeed]);
-
-  const handleClick = () => {
-    navigate("/final");
-  };
-
   return (
     <div className="main">
       <img src={OperaHall} alt="Opera Hall" />
