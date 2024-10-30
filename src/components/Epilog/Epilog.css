@@ -26,6 +26,10 @@ img {
   gap: 0em;
 }
 
+.start-video-button {
+  margin-bottom: -40px; /* Decrease the spacing below the button */
+}
+
 .epilog-video {
   width: 300px;
   height: 50px; /* Adjust spacing if needed */
@@ -34,6 +38,7 @@ img {
   justify-content: center;
   position: relative;
   z-index: 1;
+  margin-top: 0px;
 }
 
 .epilog-video video {
