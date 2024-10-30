@@ -16,7 +16,7 @@ const Epilog = () => {
     " ",
   ];
 
-  const iSpeed = 10; // Time delay of print out
+  const iSpeed = 40; // Time delay of print out
   const [iIndex, setIIndex] = useState(0); // Start printing array at this position
   const [iTextPos, setITextPos] = useState(0); // Initialise text position
   const [sContents, setSContents] = useState(""); // Initialise contents variable
