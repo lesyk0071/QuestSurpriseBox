@@ -101,6 +101,7 @@ const Epilog = () => {
               ref={videoRef}
               src={Voice}
               muted={false}
+              playsInline
               onEnded={videoEnd}
             />
           </div>
